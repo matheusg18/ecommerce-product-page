@@ -1,0 +1,42 @@
+@use '../utils/colors' as *;
+@use '../utils/functions' as *;
+
+.product-images-mobile {
+  width: 100%;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    background-color: $White;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-width: 9px;
+      font-weight: 700;
+    }
+  }
+
+  .prev-button {
+    left: space(2);
+  }
+
+  .next-button {
+    right: space(2);
+  }
+}
