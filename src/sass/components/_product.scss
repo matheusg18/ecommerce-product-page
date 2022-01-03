@@ -1,0 +1,100 @@
+@use '../utils/colors' as *;
+@use '../utils/functions' as *;
+
+.product {
+  width: 86%;
+  margin: auto;
+  margin-bottom: space(5);
+}
+
+.product-brand {
+  color: $Orange;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: space(2) 0;
+}
+
+.product-name {
+  font-size: 1.8rem;
+  color: $Very-dark-blue;
+  margin-bottom: space(2);
+}
+
+.product-description {
+  font-size: 15px;
+  color: $Dark-grayish-blue;
+  line-height: 1.6em;
+  margin-bottom: space(3);
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: space(2);
+  margin-bottom: space(3);
+
+  .current-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $Very-dark-blue;
+  }
+
+  .discount {
+    color: $Orange;
+    font-weight: 700;
+    background-color: $Pale-orange;
+    padding: space(0.5) space(1);
+    border-radius: 5px;
+  }
+
+  .original-price {
+    color: $Grayish-blue;
+    font-weight: 700;
+    text-decoration: line-through;
+    flex-grow: 1;
+    text-align: end;
+  }
+}
+
+.product-quantity {
+  width: 100%;
+  background-color: $Light-grayish-blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: space(2) space(3);
+  border-radius: 10px;
+  margin-bottom: space(2);
+
+  span {
+    color: $Very-dark-blue;
+    font-weight: 700;
+  }
+}
+
+.product-buy-button {
+  width: 100%;
+  padding: space(2);
+  border: none;
+  border-radius: 10px;
+  background-color: $Orange;
+  color: $White;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: space(2);
+  cursor: pointer;
+
+  img {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(98%) saturate(7%) hue-rotate(162deg)
+      brightness(103%) contrast(103%);
+    max-height: 1rem;
+  }
+
+  span {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+}
