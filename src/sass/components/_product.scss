@@ -68,9 +68,14 @@
   border-radius: 10px;
   margin-bottom: space(2);
 
-  span {
+  input {
     color: $Very-dark-blue;
+    font-size: 1rem;
     font-weight: 700;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    text-align: center;
   }
 }
 

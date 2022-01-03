@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import MobileProductImages from './MobileProductImages';
 
-function Product() {
+function Product({ addToCart }) {
+  const [quantity, setQuantity] = useState(0);
+
+  const decreaseQuantity = () => {
+    if (quantity > 0) setQuantity((prev) => prev - 1);
+  };
+
+  const increaseQuantity = () => {
+    setQuantity((prev) => prev + 1);
+  };
+
+  const submitQuantity = () => {
+    addToCart(quantity);
+    setQuantity(0);
+  };
+
   return (
     <main>
       <MobileProductImages />
@@ -18,11 +34,21 @@ function Product() {
           <span className="original-price">$250.00</span>
         </div>
         <div className="product-quantity">
-          <img src="images/icon-minus.svg" alt="decrease quantity" />
-          <span>0</span>
-          <img src="images/icon-plus.svg" alt="increase quantity" />
+          <img
+            src="images/icon-minus.svg"
+            alt="decrease quantity"
+            role="button"
+            onClick={decreaseQuantity}
+          />
+          <input type="number" value={quantity} readOnly />
+          <img
+            src="images/icon-plus.svg"
+            alt="increase quantity"
+            role="button"
+            onClick={increaseQuantity}
+          />
         </div>
-        <button className="product-buy-button">
+        <button type="submit" className="product-buy-button" onClick={submitQuantity}>
           <img src="images/icon-cart.svg" alt="add to cart" />
           <span>Add to cart</span>
         </button>
@@ -30,5 +56,9 @@ function Product() {
     </main>
   );
 }
+
+Product.propTypes = {
+  addToCart: PropTypes.func.isRequired,
+};
 
 export default Product;
