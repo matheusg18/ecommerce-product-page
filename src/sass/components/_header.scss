@@ -58,4 +58,30 @@
       }
     }
   }
+
+  .cart-container {
+    position: relative;
+
+    span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+      display: block;
+      padding: 1px 7px;
+      border-radius: 10px;
+      background-color: $Orange;
+      color: $White;
+      font-size: 10px;
+      font-weight: 700;
+      z-index: 9;
+    }
+
+    .cart-icon {
+      width: 25px;
+      height: 21px;
+      background-color: black;
+      mask: url(~/public/images/icon-cart.svg) no-repeat center;
+    }
+  }
 }

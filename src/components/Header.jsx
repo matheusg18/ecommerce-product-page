@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {  useState } from 'react';
+import PropTypes from 'prop-types';
 
-function Header() {
+function Header({ cart }) {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const handleMobileMenuClick = () => {
@@ -36,10 +37,17 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <img src="images/icon-cart.svg" alt="cart" />
+      <div className="cart-container">
+        <span>{cart}</span>
+        <div className="cart-icon" />
+      </div>
       <img src="images/image-avatar.png" alt="avatar" />
     </header>
   );
 }
+
+Header.propTypes = {
+  cart: PropTypes.number.isRequired,
+};
 
 export default Header;

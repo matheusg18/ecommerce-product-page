@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header cart={ cart } />
       <Product  addToCart={ addToCart } />
     </>
   );
