@@ -1,20 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from './components/Header';
 import Product from './components/Product';
+import CartProvider from './context/CartProvider';
 import './sass/style.scss';
 
 function App() {
-  const [cart, setCart] = useState(0);
-
-  const addToCart = (quantity) => {
-    setCart(quantity);
-  };
-
   return (
-    <>
-      <Header cart={ cart } />
-      <Product  addToCart={ addToCart } />
-    </>
+    <CartProvider>
+      <Header />
+      <Product />
+    </CartProvider>
   );
 }
 

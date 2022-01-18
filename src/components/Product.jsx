@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext, useState } from 'react';
+import CartContext from '../context/CartContext';
 import MobileProductImages from './MobileProductImages';
 
-function Product({ addToCart }) {
+function Product() {
   const [quantity, setQuantity] = useState(0);
+  const { addToCart } = useContext(CartContext);
 
   const decreaseQuantity = () => {
     if (quantity > 0) setQuantity((prev) => prev - 1);
@@ -56,9 +57,5 @@ function Product({ addToCart }) {
     </main>
   );
 }
-
-Product.propTypes = {
-  addToCart: PropTypes.func.isRequired,
-};
 
 export default Product;

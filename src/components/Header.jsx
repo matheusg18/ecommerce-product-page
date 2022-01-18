@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {  useState } from 'react';
-import PropTypes from 'prop-types';
+import React, {  useContext, useState } from 'react';
+import CartContext from '../context/CartContext';
 
-function Header({ cart }) {
+function Header() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const { cart } = useContext(CartContext);
 
   const handleMobileMenuClick = () => {
     setShowMobileMenu((prev) => !prev);
@@ -45,9 +46,5 @@ function Header({ cart }) {
     </header>
   );
 }
-
-Header.propTypes = {
-  cart: PropTypes.number.isRequired,
-};
 
 export default Header;
