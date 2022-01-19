@@ -15,16 +15,16 @@ function CartBox() {
       ) : (
         <>
           <div className="cart-item">
-            <img src="images/image-product-1-thumbnail.jpg" alt="Product in cart thumbnail" />
+            <img className="cart-item-thumbnail" src="images/image-product-1-thumbnail.jpg" alt="Product in cart thumbnail" />
             <div className="cart-item-subtotal">
-              <span>Fall Limited Edition Sneakers</span>
-              <span>{`$125.00 x ${cart} `} <strong>{`${subtotal}.00`}</strong></span>
+              <span className="cart-item-product-name">Fall Limited Edition Sneakers</span>
+              <span>{`$125.00 x ${cart} `} <strong>{`$${subtotal}.00`}</strong></span>
             </div>
             <button type="button" onClick={resetCart}>
               <img src="images/icon-delete.svg" alt="delete cart item" />
             </button>
           </div>
-          <button type="button">Checkout</button>
+          <button className="checkout-button" type="button">Checkout</button>
         </>
       )}
     </section>
