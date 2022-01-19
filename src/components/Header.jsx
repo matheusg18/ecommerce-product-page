@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {  useContext, useState } from 'react';
+import PropTypes from 'prop-types';
 import CartContext from '../context/CartContext';
 
-function Header() {
+function Header({ setShowCartBox }) {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const { cart } = useContext(CartContext);
 
@@ -40,11 +41,15 @@ function Header() {
       </nav>
       <div className="cart-container">
         <span>{cart}</span>
-        <div className="cart-icon" />
+        <button className="cart-icon" onClick={() => setShowCartBox((prev) => !prev)}/>
       </div>
       <img src="images/image-avatar.png" alt="avatar" />
     </header>
   );
-}
+};
+
+Header.propTypes = {
+  setShowCartBox: PropTypes.func.isRequired,
+};
 
 export default Header;
