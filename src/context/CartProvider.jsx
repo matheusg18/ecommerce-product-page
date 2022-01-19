@@ -9,12 +9,16 @@ function CartProvider({ children }) {
     setCart(quantity);
   };
 
+  const resetCart = () => {
+    setCart(0);
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart, resetCart }}>
       {children}
     </CartContext.Provider>
   )
-}
+};
 
 CartProvider.propTypes = {
   children: PropTypes.node.isRequired,
