@@ -3,7 +3,7 @@
 
 .product {
   width: 86%;
-  margin: auto;
+  margin: 0 auto;
   margin-bottom: space(5);
 }
 
@@ -101,5 +101,11 @@
   span {
     font-size: 1.1rem;
     font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .product {
+    max-width: 40%;
   }
 }

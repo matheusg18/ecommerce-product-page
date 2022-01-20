@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import CartContext from '../context/CartContext';
+import DesktopProductImages from './DesktopProductImages';
 import MobileProductImages from './MobileProductImages';
 
 function Product() {
@@ -21,7 +22,7 @@ function Product() {
 
   return (
     <main>
-      <MobileProductImages />
+      <DesktopProductImages />
       <section className="product">
         <h2 className="product-brand">Sneaker Company</h2>
         <h3 className="product-name">Fall Limited Edition Sneakers</h3>

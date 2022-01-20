@@ -1,0 +1,42 @@
+@use '../utils/colors' as *;
+@use '../utils/functions' as *;
+
+.product-images-desktop {
+  max-width: 40%;
+  height: auto;
+}
+
+.desktop-main-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: space(4);
+}
+
+.desktop-thumbnails {
+  display: flex;
+  justify-content: space-between;
+
+  .thumbnail-frame {
+    max-width: 20%;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+      max-width: 110%;
+      height: auto;
+    }
+  }
+
+  .thumbnail-frame.frame-active {
+    border: 2px solid $Orange;
+  }
+}
+
+.thumbnail-active {
+  filter: opacity(0.3);
+}
